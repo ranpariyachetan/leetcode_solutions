@@ -2,6 +2,7 @@
 # Problem 744: Find Smallest Letter Greater Than Target
 # https://leetcode.com/problems/find-smallest-letter-greater-than-target
 
+# Using Binary Search
 def nextGreatestLetter(letters, target):
     n = len(letters)
     left = 0

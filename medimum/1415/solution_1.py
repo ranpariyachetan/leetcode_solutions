@@ -5,6 +5,8 @@ def getHappyString(n: int, k: int) -> str:
     letters = ["a", "b", "c"]
 
     # Total number of happy strings will be 3 * pow(2, n-1)
+    if k > 3 * pow(2, n - 1):
+        return ""
 
     happyStrings = []
     def createHappyString(prefix):
@@ -27,4 +29,14 @@ def print_test_result(input, expected, actual):
 n = 1
 k = 3
 expected = "c"
+print_test_result((n, k), expected, getHappyString(n, k))
+
+n = 1
+k = 4
+expected = ""
+print_test_result((n, k), expected, getHappyString(n, k))
+
+n = 3
+k = 9
+expected = "cab"
 print_test_result((n, k), expected, getHappyString(n, k))

@@ -10,8 +10,15 @@ class Robot:
         self.height = height
         self.curr_dir = "East"
         self.curr_pos = [0, 0]
+        self.cycle_length = 2 * (self.width + self.height - 2)
 
     def step(self, num: int) -> None:
+        num = num % self.cycle_length
+
+        if num == 0 and self.curr_pos == [0,0]:
+            self.curr_dir = "South"
+            return
+        
         for i in range(num):
             next_pos = self._getNextPos()
             if self._isValid(next_pos):

@@ -3,14 +3,11 @@
 from typing import List
 def maximumElementAfterDecrementingAndRearranging(arr: List[int]) -> int:
     arr.sort()
-    result = prev = 1
-    for i, num in enumerate(arr):
-        if i == 0:
-            continue
+    prev = 1
+    for num in arr[1:]:
         if prev + 1 <= num:
-            result = prev = prev + 1
-    return result
-
+            prev = prev + 1
+    return prev
 
 nums = [100, 1, 1000]
 print(maximumElementAfterDecrementingAndRearranging(nums))

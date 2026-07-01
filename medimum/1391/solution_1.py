@@ -52,32 +52,18 @@ def hasValidPath(grid: List[List[int]]) -> bool:
             if dfs(newx, newy):
                 return True
 
-        # start = street_map[grid[x][y]][0] if prev_end == "" else flow_map[prev_end]
-        # end = street_map[grid[x][y]][1] if start == street_map[grid[x][y]][0] else street_map[grid[x][y]][0]
-        # next_start = flow_map[end]
-
-        # dx, dy = dirs[end][0], dirs[end][1]
-        # newx, newy = x + dx, y + dy
-
-        # if newx < 0 or newx >= m or newy < 0 or newy >= n:
-        #     return False
-
-        # if next_start not in street_map[grid[newx][newy]]:
-        #     return False
-
         return False
     
     return dfs(0, 0)
 
+grid = [[2,4,3],[6,5,2]]
+print(hasValidPath(grid))
 
-# grid = [[2,4,3],[6,5,2]]
-# print(hasValidPath(grid))
+grid = [[2,4,3],[6,5,1]]
+print(hasValidPath(grid))
 
-# grid = [[2,4,3],[6,5,1]]
-# print(hasValidPath(grid))
-
-# grid = [[1,2,1],[1,2,1]]
-# print(hasValidPath(grid))
+grid = [[1,2,1],[1,2,1]]
+print(hasValidPath(grid))
 
 grid = [[6,1,3],[4,1,5]]
 print(hasValidPath(grid))
